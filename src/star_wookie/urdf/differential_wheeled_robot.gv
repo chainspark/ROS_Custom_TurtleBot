@@ -1,0 +1,41 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"base_link" [label="base_link"];
+"caster_back_link" [label="caster_back_link"];
+"caster_front_link" [label="caster_front_link"];
+"front_left_wheel" [label="front_left_wheel"];
+"front_right_wheel" [label="front_right_wheel"];
+"hokuyo_link" [label="hokuyo_link"];
+"rgbd_camera_link" [label="rgbd_camera_link"];
+"rgbd_camera_depth_frame" [label="rgbd_camera_depth_frame"];
+"rgbd_camera_depth_optical_frame" [label="rgbd_camera_depth_optical_frame"];
+"rgbd_camera_optical_frame" [label="rgbd_camera_optical_frame"];
+"rgbd_camera_rgb_frame" [label="rgbd_camera_rgb_frame"];
+"rgbd_camera_rgb_optical_frame" [label="rgbd_camera_rgb_optical_frame"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_footprint_joint" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
+"base_footprint_joint" -> "base_link"
+"base_link" -> "caster_back_joint" [label="xyz: -0.135 0 0.009 \nrpy: -1.5708 0 0"]
+"caster_back_joint" -> "caster_back_link"
+"base_link" -> "caster_front_joint" [label="xyz: 0.115 0 0.007 \nrpy: -1.5708 0 0"]
+"caster_front_joint" -> "caster_front_link"
+"base_link" -> "front_left_wheel_joint" [label="xyz: 0 -0.15 0 \nrpy: 0 -0 0"]
+"front_left_wheel_joint" -> "front_left_wheel"
+"base_link" -> "front_right_wheel_joint" [label="xyz: 0 0.15 0 \nrpy: 0 -0 0"]
+"front_right_wheel_joint" -> "front_right_wheel"
+"base_link" -> "hokuyo_joint" [label="xyz: 0.125 0 0.0325 \nrpy: 0 -0 0"]
+"hokuyo_joint" -> "hokuyo_link"
+"base_link" -> "rgbd_camera_joint" [label="xyz: 0.125 0 0.07 \nrpy: 0 -0 0"]
+"rgbd_camera_joint" -> "rgbd_camera_link"
+"rgbd_camera_link" -> "rgbd_camera_depth_joint" [label="xyz: 0 0.049 0 \nrpy: 0 -0 0"]
+"rgbd_camera_depth_joint" -> "rgbd_camera_depth_frame"
+"rgbd_camera_depth_frame" -> "rgbd_camera_depth_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -5.55112e-17 -1.5708"]
+"rgbd_camera_depth_optical_joint" -> "rgbd_camera_depth_optical_frame"
+"rgbd_camera_link" -> "rgbd_camera_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -5.55112e-17 -1.5708"]
+"rgbd_camera_optical_joint" -> "rgbd_camera_optical_frame"
+"rgbd_camera_link" -> "rgbd_camera_rgb_joint" [label="xyz: 0 0.022 0 \nrpy: 0 -0 0"]
+"rgbd_camera_rgb_joint" -> "rgbd_camera_rgb_frame"
+"rgbd_camera_rgb_frame" -> "rgbd_camera_rgb_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -5.55112e-17 -1.5708"]
+"rgbd_camera_rgb_optical_joint" -> "rgbd_camera_rgb_optical_frame"
+}
