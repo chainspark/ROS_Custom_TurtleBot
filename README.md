@@ -3,7 +3,7 @@
 The package includes URDF and launch files for Differential Drive Robot with a XtionPro RGB-D Camera sensor to visualize the environment in the Gazebo using turtlebot teleoperation control node.
 
 ## Custom Differential Drive Robot Linkages
-![](https://github.com/chainspark/ROS_Custom_TurtleBot/blob/main/src/star_wookie/urdf/differential_wheeled_robot.pdf)
+(https://github.com/chainspark/ROS_Custom_TurtleBot/blob/main/src/star_wookie/urdf/differential_wheeled_robot.pdf)
 
 ## Rviz Visualization of Robot
 ![](https://github.com/chainspark/ROS_Custom_TurtleBot/blob/main/src/Screenshots/Rviz_Robot_Description.png)
